@@ -1,6 +1,6 @@
 let pokemonListaId = 0;
 let numeroDePagina = 1;
-añadirTarjetaPokemon();
+añadirTarjetasPokemon();
 
 document.querySelector('#anterior').onclick = function () {
 	if (numeroDePagina > 1) {
