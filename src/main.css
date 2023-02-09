@@ -109,6 +109,7 @@ h1 {
 }
 .contenedor-tarjeta {
 	border-radius: 20px;
+	margin-bottom: 0px !important;
 	border: none;
 	text-align: left;
 }
@@ -132,7 +133,7 @@ h1 {
 	transition: all 0.8s ease;
 	color: rgb(0, 0, 0);
 	font-size: 22px;
-
+	border-radius: 0px 0px 16px 16px;
 	font-family: 'Teko', sans-serif;
 	background-image: url('../img/tarjetasecundaria.png');
 	background-size: cover;
