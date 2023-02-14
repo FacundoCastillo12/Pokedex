@@ -1,6 +1,7 @@
+/* eslint-disable func-names */
 import {
   actualizarNumeroPagina,
-  cambirNumeroPagina,
+  cambiarNumeroPagina,
   actualizarOrdenPokemonLista,
   añadirTarjetasPokemon,
   obtenerNumeroDePagina,
@@ -11,7 +12,7 @@ añadirTarjetasPokemon();
 document.querySelector('#anterior').onclick = function () {
   if (obtenerNumeroDePagina() > 1) {
     actualizarOrdenPokemonLista(40);
-    cambirNumeroPagina('-');
+    cambiarNumeroPagina('-');
     actualizarNumeroPagina();
     añadirTarjetasPokemon();
   }
@@ -19,7 +20,7 @@ document.querySelector('#anterior').onclick = function () {
 
 document.querySelector('#siguiente').onclick = function () {
   if (obtenerNumeroDePagina() >= 1) {
-    cambirNumeroPagina('+');
+    cambiarNumeroPagina('+');
     actualizarNumeroPagina();
     añadirTarjetasPokemon();
   }

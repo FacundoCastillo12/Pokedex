@@ -10,10 +10,11 @@ export function actualizarNumeroPagina() {
 export function obtenerNumeroDePagina() {
   return numeroDePagina;
 }
-export function cambirNumeroPagina(signo) {
+export function cambiarNumeroPagina(signo) {
   if (signo === '-') {
     numeroDePagina -= 1;
-  } else if (signo === '+') {
+  }
+  if (signo === '+') {
     numeroDePagina += 1;
   }
 }

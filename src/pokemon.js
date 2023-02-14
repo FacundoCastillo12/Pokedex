@@ -1,6 +1,6 @@
 import { conseguirInformacionPokemonId } from './pokeapi.js';
 
-function crearTarjetaElementos(respuestaJSON) {
+export function crearElementosTarjeta(respuestaJSON) {
   const ELEMENTOS = `
       <div class="card-group tarjeta-completa">
           <div class="card contenedor-tarjeta">
@@ -26,6 +26,6 @@ export async function crearTarjetasPokemon(pokemonId, ordenFila, ordenTarjeta) {
   const TARJETA = document.querySelector(
     `.fila-${ordenFila} .tarjeta-${ordenTarjeta}`,
   );
-  const ELEMENTOS = crearTarjetaElementos(RESPUESTA_JSON);
+  const ELEMENTOS = crearElementosTarjeta(RESPUESTA_JSON);
   TARJETA.innerHTML = ELEMENTOS;
 }
