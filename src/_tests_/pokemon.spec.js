@@ -11,6 +11,17 @@ const POKEMON = {
   weight: '5',
   types: [{ type: { name: 'fuego' } }, 'aire'],
 };
+class Pokemon {
+  constructor(RESPUESTA_JSON) {
+    this.nombre = RESPUESTA_JSON.name;
+    this.id = RESPUESTA_JSON.id;
+    this.experiencia = RESPUESTA_JSON.base_experience;
+    this.imagen = RESPUESTA_JSON.sprites.other.home.front_default;
+    this.altura = RESPUESTA_JSON.height;
+    this.peso = RESPUESTA_JSON.weight;
+    this.tipo = RESPUESTA_JSON.types[0].type.name;
+  }
+}
 
 describe('Probar pokemon.js', () => {
   beforeEach(() => {
@@ -25,7 +36,8 @@ describe('Probar pokemon.js', () => {
     expect(global.fetch).toHaveBeenCalledTimes(1);
   });
   it('Probar crear elementos para tarjeta', () => {
-    const ELEMENTOS = crearElementosTarjeta(POKEMON);
+    const nuevoPokemon = new Pokemon(POKEMON);
+    const ELEMENTOS = crearElementosTarjeta(nuevoPokemon);
     expect(ELEMENTOS).toContain('ID: <strong>19');
     expect(ELEMENTOS).toContain('EXP BASE: <strong>178');
     expect(ELEMENTOS).toContain('ALTURA: <strong>100<');
