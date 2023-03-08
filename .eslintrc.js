@@ -6,9 +6,14 @@ module.exports = {
   extends: 'airbnb-base',
   overrides: [
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  plugins: [
+    '@typescript-eslint',
+    'jest',
+  ],
   rules: {
     'import/prefer-default-export': 0,
     'import/extensions': ['error', 'ignorePackages'],
