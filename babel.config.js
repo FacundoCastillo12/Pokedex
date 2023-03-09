@@ -6,6 +6,8 @@ module.exports = {
         targets: {
           node: 'current',
         },
+        modules: 'commonjs',
+        loose: true,
       },
     ],
     '@babel/preset-typescript',
