@@ -2,156 +2,156 @@
 @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 html {
-	height: 100%;
+  height: 100%;
 }
 body {
-	font-size: 1.2rem;
-	min-height: 100%;
-	margin: 0;
-	background: linear-gradient(to right, #267871, #136a8a);
+  font-size: 1.2rem;
+  min-height: 100%;
+  margin: 0;
+  background: linear-gradient(to right, #267871, #136a8a);
 }
 .grid-container > * {
-	text-align: center;
+  text-align: center;
 }
 .header {
-	grid-area: header;
+  grid-area: header;
 
-	border-radius: 4px;
-	padding: 10px;
+  border-radius: 4px;
+  padding: 10px;
 }
 .nav-menu {
-	grid-area: nav-menu;
+  grid-area: nav-menu;
 
-	border-radius: 4px;
+  border-radius: 4px;
 }
 .main {
-	grid-area: main;
+  grid-area: main;
 
-	border-radius: 4px;
-	padding: 10px;
+  border-radius: 4px;
+  padding: 10px;
 }
 .sidebar {
-	grid-area: sidebar;
-	background-color: rgba(5, 0, 1, 0.1);
-	box-shadow: -1px 1px 7px 0px rgba(238, 255, 0, 0.75);
-	border-radius: 4px;
-	padding: 10px;
+  grid-area: sidebar;
+  background-color: rgba(5, 0, 1, 0.1);
+  box-shadow: -1px 1px 7px 0px rgba(238, 255, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
 }
 .footer {
-	grid-area: footer;
-	background-color: rgba(0, 0, 0, 0.199);
-	box-shadow: -1px 1px 7px 0px rgba(238, 255, 0, 0.75);
-	border-radius: 4px;
-	padding: 10px;
+  grid-area: footer;
+  background-color: rgba(0, 0, 0, 0.199);
+  box-shadow: -1px 1px 7px 0px rgba(238, 255, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
 }
 .grid-container {
-	display: grid;
-	gap: 10px;
-	grid-template:
-		'header' 80px
-		'main' auto
-		'nav-menu' 50px
-		'footer' 100px;
+  display: grid;
+  gap: 10px;
+  grid-template:
+    'header' 80px
+    'main' auto
+    'nav-menu' 50px
+    'footer' 100px;
 }
 @media (min-width: 576px) {
-	.grid-container {
-		grid-template:
-			'header header' 80px
-			'main main' auto
-			'nav-menu nav-menu' 50px
-			'footer footer' 100px /
-			auto 200px;
-	}
+  .grid-container {
+    grid-template:
+      'header header' 80px
+      'main main' auto
+      'nav-menu nav-menu' 50px
+      'footer footer' 100px /
+      auto 200px;
+  }
 }
 
 @media (min-width: 992px) {
-	.grid-container {
-		grid-template:
-			'header header header' 100px
-			'main main main' auto
-			'nav-menu nav-menu nav-menu' 100px
-			'footer footer footer' 100px /
-			200px auto 200px;
-	}
+  .grid-container {
+    grid-template:
+      'header header header' 100px
+      'main main main' auto
+      'nav-menu nav-menu nav-menu' 100px
+      'footer footer footer' 100px /
+      200px auto 200px;
+  }
 }
 h1 {
-	font-size: 3em;
-	text-align: center;
-	font-family: 'Pokemon Solid', sans-serif;
-	color: yellow;
-	letter-spacing: 10px;
-	text-shadow: 4px 0 #4400ff, -2px 0 #3700ff, 0 2px #3700ff, 0 -2px #2600ff,
-		1px 1px #0011ff, -1px -1px #0400ff, 1px -1px #3700ff, -1px 1px #4400ff;
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Pokemon Solid', sans-serif;
+  color: yellow;
+  letter-spacing: 10px;
+  text-shadow: 4px 0 #4400ff, -2px 0 #3700ff, 0 2px #3700ff, 0 -2px #2600ff, 1px 1px #0011ff, -1px -1px #0400ff,
+    1px -1px #3700ff, -1px 1px #4400ff;
 }
 
 .nombre-pokemon {
-	font-size: 2em;
-	text-align: center;
-	font-family: 'Teko', sans-serif;
-	text-transform: capitalize;
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+  text-transform: capitalize;
 }
 .tipo {
-	text-transform: capitalize;
+  text-transform: capitalize;
 }
 .tarjeta-completa {
-	border-radius: 20px;
-	border: 4px black;
-	border-style: inset;
-	margin-bottom: 20px;
-	-webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
-	-moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
-	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  border: 4px black;
+  border-style: inset;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
 }
 .contenedor-tarjeta {
-	border-radius: 20px;
-	margin-bottom: 0px !important;
-	border: none;
-	text-align: left;
+  border-radius: 20px;
+  margin-bottom: 0px !important;
+  border: none;
+  text-align: left;
 }
 .contenedor-imagen {
-	border-radius: 16px 16px 16px 16px;
-	background-color: #9b030d;
-	border: none;
-	transition-duration: 500ms;
+  border-radius: 16px 16px 16px 16px;
+  background-color: #9b030d;
+  border: none;
+  transition-duration: 500ms;
 }
 
 .tarjeta-imagen {
-	border: none;
+  border: none;
 }
 .tarjeta-informacion {
-	overflow: hidden;
-	height: 0;
-	-webkit-transition: all 0.8s ease;
-	-moz-transition: all 0.8s ease;
-	-ms-transition: all 0.8s ease;
-	-o-transition: all 0.8s ease;
-	transition: all 0.8s ease;
-	color: rgb(0, 0, 0);
-	font-size: 22px;
-	border-radius: 0px 0px 16px 16px;
-	font-family: 'Teko', sans-serif;
-	background-image: url('../img/tarjetasecundaria.png');
-	background-size: cover;
-	background-position: center;
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -ms-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  border-radius: 0px 0px 16px 16px;
+  font-family: 'Teko', sans-serif;
+  background-image: url('../img/tarjetasecundaria.png');
+  background-size: cover;
+  background-position: center;
 }
 .card-text {
-	margin-left: 2px;
+  margin-left: 2px;
 }
 .contenedor-tarjeta:hover > .tarjeta-informacion {
-	width: 100%;
-	height: 240px;
-	display: block;
+  width: 100%;
+  height: 240px;
+  display: block;
 }
 .contenedor-tarjeta:hover > .contenedor-imagen {
-	border-radius: 16px 16px 0px 0px;
-	display: block;
+  border-radius: 16px 16px 0px 0px;
+  display: block;
 }
 .texto-pie {
-	font-size: 20px;
-	color: rgb(5, 5, 5);
+  font-size: 20px;
+  color: rgb(5, 5, 5);
 }

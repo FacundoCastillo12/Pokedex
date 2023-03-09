@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { crearTarjetasPokemon } from './pokemon.js';
 
 let pokemonListaId: number = 0;

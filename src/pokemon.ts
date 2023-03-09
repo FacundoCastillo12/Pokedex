@@ -1,9 +1,10 @@
+/* eslint-disable import/no-unresolved */
 import Pokemon from './entidades/pokemon.js';
 import { mapearPokemon } from './mapeadores/pokemon.js';
 import { conseguirInformacionPokemonId } from './pokeapi.js';
 
 export function crearElementosTarjeta(pokemon: Pokemon): string {
-    const ELEMENTOS: string = `
+  const ELEMENTOS: string = `
         <div class="card-group tarjeta-completa">
             <div class="card contenedor-tarjeta">
                 <div class="card contenedor-imagen">
@@ -20,14 +21,16 @@ export function crearElementosTarjeta(pokemon: Pokemon): string {
             </div>
         </div> 
     `;
-    return ELEMENTOS;
-  }
+  return ELEMENTOS;
+}
 
-export async function crearTarjetasPokemon(pokemonId: number, ordenFila: number, ordenTarjeta: number) {
+export async function crearTarjetasPokemon(
+  pokemonId: number,
+  ordenFila: number,
+  ordenTarjeta: number,
+) {
   const RESPUESTA_JSON = await conseguirInformacionPokemonId(pokemonId);
-  const TARJETA = document.querySelector(
-    `.fila-${ordenFila} .tarjeta-${ordenTarjeta}`,
-  );
+  const TARJETA = document.querySelector(`.fila-${ordenFila} .tarjeta-${ordenTarjeta}`);
   const nuevoPokemon = mapearPokemon(RESPUESTA_JSON);
   const ELEMENTOS = crearElementosTarjeta(nuevoPokemon);
   if (TARJETA) {
