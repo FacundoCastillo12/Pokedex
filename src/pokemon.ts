@@ -30,7 +30,9 @@ export async function crearTarjetasPokemon(
   ordenTarjeta: number,
 ) {
   const RESPUESTA_JSON = await conseguirInformacionPokemonId(pokemonId);
-  const TARJETA = document.querySelector(`.fila-${ordenFila} .tarjeta-${ordenTarjeta}`);
+  const TARJETA = document.querySelector(
+    `.fila-${ordenFila} .tarjeta-${ordenTarjeta}`,
+  );
   const nuevoPokemon = mapearPokemon(RESPUESTA_JSON);
   const ELEMENTOS = crearElementosTarjeta(nuevoPokemon);
   if (TARJETA) {

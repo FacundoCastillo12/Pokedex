@@ -23,7 +23,11 @@ export interface IDatosApi {
 
 export function mapearPokemon(datosApi: IDatosApi): Pokemon {
   const {
-    id, name: nombre, base_experience: experiencia, height: altura, weight: peso,
+    id,
+    name: nombre,
+    base_experience: experiencia,
+    height: altura,
+    weight: peso,
   } = datosApi;
   const imagen = datosApi.sprites.other.home.front_default;
   const tipo = datosApi.types[0].type.name;

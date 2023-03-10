@@ -34,7 +34,9 @@ describe('conseguirInformacionPokemonId', () => {
   test('devuelve los datos de un Pokemon', async () => {
     const datos = await conseguirInformacionPokemonId(1);
     expect(global.fetch).toHaveBeenCalledTimes(1);
-    expect(global.fetch).toHaveBeenCalledWith('https://pokeapi.co/api/v2/pokemon/1');
+    expect(global.fetch).toHaveBeenCalledWith(
+      'https://pokeapi.co/api/v2/pokemon/1',
+    );
     expect(datos).toEqual(MOCK_RESPONSE);
   });
 });

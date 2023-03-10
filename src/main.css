@@ -85,8 +85,8 @@ h1 {
   font-family: 'Pokemon Solid', sans-serif;
   color: yellow;
   letter-spacing: 10px;
-  text-shadow: 4px 0 #4400ff, -2px 0 #3700ff, 0 2px #3700ff, 0 -2px #2600ff, 1px 1px #0011ff, -1px -1px #0400ff,
-    1px -1px #3700ff, -1px 1px #4400ff;
+  text-shadow: 4px 0 #4400ff, -2px 0 #3700ff, 0 2px #3700ff, 0 -2px #2600ff,
+    1px 1px #0011ff, -1px -1px #0400ff, 1px -1px #3700ff, -1px 1px #4400ff;
 }
 
 .nombre-pokemon {

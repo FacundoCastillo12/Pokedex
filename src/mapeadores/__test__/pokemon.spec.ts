@@ -13,8 +13,7 @@ it('Probar si mapeador funciona correctamente', () => {
     sprites: {
       other: {
         home: {
-          front_default:
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png',
+          front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png',
         },
       },
     },

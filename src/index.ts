@@ -10,7 +10,9 @@ import {
 
 añadirTarjetasPokemon();
 const BotonAnterior = document.querySelector('#anterior') as HTMLButtonElement;
-const BotonSiguiente = document.querySelector('#siguiente') as HTMLButtonElement;
+const BotonSiguiente = document.querySelector(
+  '#siguiente',
+) as HTMLButtonElement;
 BotonAnterior.onclick = function () {
   if (obtenerNumeroDePagina() > 1) {
     actualizarOrdenPokemonLista(40);
