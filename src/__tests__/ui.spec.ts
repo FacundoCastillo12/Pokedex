@@ -1,7 +1,8 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-undef */
 /// <reference types="Jest" />
 
-import pokedexFixture from './pokedex.fixture.js';
+import pokedexFixture from './fixture/pokedex.fixture.js';
 import {
   actualizarNumeroPagina,
   cambiarNumeroPagina,
@@ -16,8 +17,13 @@ describe('Probar ui', () => {
     global.fetch = jest.fn();
   });
   it('Probar actualizar numero de pagina', () => {
+    const $pagina: HTMLElement = document.querySelector('#pagina')!;
     actualizarNumeroPagina();
-    expect(document.querySelector('#pagina').textContent).toBe('1');
+    expect($pagina.textContent).toBe('1');
+  });
+  it('Probar actualizar numero de pagina y probar si #pagina de null', () => {
+    document.querySelector = jest.fn().mockReturnValue(null);
+    expect(() => actualizarNumeroPagina()).not.toThrow();
   });
   it('Probar cambiar numero de pagina -', () => {
     cambiarNumeroPagina('-');
@@ -44,10 +50,28 @@ describe('Probar ui', () => {
       weight: '5',
       types: [{ type: { name: 'fuego' } }, 'aire'],
     };
+    global.fetch = jest.fn().mockResolvedValue({
+      json: () => Promise.resolve(POKEMON),
+    });
+    añadirTarjetasPokemon();
+    expect(global.fetch).toHaveBeenCalledTimes(20);
+  });
+});
+/*
+  it('Probar añadir tarjetas pokemon', () => {
+    const POKEMON = {
+      name: 'beedrill',
+      base_experience: 178,
+      sprites: { other: { home: { front_default: 'Imagen' } } },
+      id: '19',
+      height: '100',
+      weight: '5',
+      types: [{ type: { name: 'fuego' } }, 'aire'],
+    };
     global.fetch = jest.fn(() => Promise.resolve({
       json: () => Promise.resolve(POKEMON),
     }));
     añadirTarjetasPokemon();
     expect(global.fetch).toHaveBeenCalledTimes(20);
   });
-});
+*/

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable func-names */
 import {
   actualizarNumeroPagina,
@@ -8,8 +9,11 @@ import {
 } from './ui.js';
 
 añadirTarjetasPokemon();
-
-document.querySelector('#anterior').onclick = function () {
+const BotonAnterior = document.querySelector('#anterior') as HTMLButtonElement;
+const BotonSiguiente = document.querySelector(
+  '#siguiente',
+) as HTMLButtonElement;
+BotonAnterior.onclick = function () {
   if (obtenerNumeroDePagina() > 1) {
     actualizarOrdenPokemonLista(40);
     cambiarNumeroPagina('-');
@@ -17,8 +21,7 @@ document.querySelector('#anterior').onclick = function () {
     añadirTarjetasPokemon();
   }
 };
-
-document.querySelector('#siguiente').onclick = function () {
+BotonSiguiente.onclick = function () {
   if (obtenerNumeroDePagina() >= 1) {
     cambiarNumeroPagina('+');
     actualizarNumeroPagina();

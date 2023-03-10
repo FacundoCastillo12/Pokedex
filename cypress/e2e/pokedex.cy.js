@@ -16,12 +16,14 @@ context('Pokedex pruebas', () => {
       let pokemonId = 0;
       for (let i = 0; i <= 5; i += 1) {
         pokemonId += 1;
-        cy.request(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).its('body').then((pokemon) => {
-          expect(pokemon).to.have.property('id');
-          expect(pokemon.is_default).to.be.true;
-          expect(pokemon).to.have.property('sprites');
-          expect(pokemon.sprites).to.not.be.empty;
-        });
+        cy.request(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+          .its('body')
+          .then((pokemon) => {
+            expect(pokemon).to.have.property('id');
+            expect(pokemon.is_default).to.be.true;
+            expect(pokemon).to.have.property('sprites');
+            expect(pokemon.sprites).to.not.be.empty;
+          });
       }
     });
     it('Comprobar si las tarjetas han cargado correctamente', () => {
@@ -40,35 +42,41 @@ context('Pokedex pruebas', () => {
       cy.get('.fila-2 .col').should('have.length', 5);
       cy.get('.fila-3 .col').should('have.length', 5);
       cy.get('.fila-4 .col').should('have.length', 5);
-      cy.get('#siguiente').click().then(() => {
-        cy.wait(1000);
-        cy.get('.col').find('img').should('have.attr', 'src');
-        cy.get('.fila-1 .col').should('have.length', 5);
-        cy.get('.fila-2 .col').should('have.length', 5);
-        cy.get('.fila-3 .col').should('have.length', 5);
-        cy.get('.fila-4 .col').should('have.length', 5);
-        cy.get('#pagina').should('have.text', '2');
-      });
-      cy.get('#anterior').click().then(() => {
-        cy.wait(1000);
-        cy.get('.col').find('img').should('have.attr', 'src');
-        cy.get('.fila-1 .col').should('have.length', 5);
-        cy.get('.fila-2 .col').should('have.length', 5);
-        cy.get('.fila-3 .col').should('have.length', 5);
-        cy.get('.fila-4 .col').should('have.length', 5);
-        cy.get('#pagina').should('have.text', '1');
-      });
+      cy.get('#siguiente')
+        .click()
+        .then(() => {
+          cy.wait(1000);
+          cy.get('.col').find('img').should('have.attr', 'src');
+          cy.get('.fila-1 .col').should('have.length', 5);
+          cy.get('.fila-2 .col').should('have.length', 5);
+          cy.get('.fila-3 .col').should('have.length', 5);
+          cy.get('.fila-4 .col').should('have.length', 5);
+          cy.get('#pagina').should('have.text', '2');
+        });
+      cy.get('#anterior')
+        .click()
+        .then(() => {
+          cy.wait(1000);
+          cy.get('.col').find('img').should('have.attr', 'src');
+          cy.get('.fila-1 .col').should('have.length', 5);
+          cy.get('.fila-2 .col').should('have.length', 5);
+          cy.get('.fila-3 .col').should('have.length', 5);
+          cy.get('.fila-4 .col').should('have.length', 5);
+          cy.get('#pagina').should('have.text', '1');
+        });
     });
     it('Asegurar respuesta al presionar multiples veces el boton siguiente', () => {
-      cy.get('#siguiente').click().then(() => {
-        cy.wait(1000);
-        cy.get('.col').find('img').should('have.attr', 'src');
-        cy.get('.fila-1 .col').should('have.length', 5);
-        cy.get('.fila-2 .col').should('have.length', 5);
-        cy.get('.fila-3 .col').should('have.length', 5);
-        cy.get('.fila-4 .col').should('have.length', 5);
-        cy.get('#pagina').should('have.text', '2');
-      });
+      cy.get('#siguiente')
+        .click()
+        .then(() => {
+          cy.wait(1000);
+          cy.get('.col').find('img').should('have.attr', 'src');
+          cy.get('.fila-1 .col').should('have.length', 5);
+          cy.get('.fila-2 .col').should('have.length', 5);
+          cy.get('.fila-3 .col').should('have.length', 5);
+          cy.get('.fila-4 .col').should('have.length', 5);
+          cy.get('#pagina').should('have.text', '2');
+        });
       cy.get('#siguiente').click();
       cy.wait(1000);
       cy.get('#siguiente').click();
