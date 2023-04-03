@@ -1,7 +1,7 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Build and Deploy
+name: Build
 on: [push]
 permissions:
   contents: write
@@ -14,23 +14,25 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm ci
-          npm run build
-          
-                
+      - name: Install
+        run: npm ci
+        
+      - name: Prettier code 
+        run: npm run prettier
+        
       - name: Lint code 
         run: npm run lint
 
       - name: Run tests
         run: npm test
-
-
+        
+      - name: Build 🔧 
+        run: npm run build
+        
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ~dist # The folder the action should deploy.
+          folder: . # The folder the action should deploy.
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages # The branch the action should deploy to.
 
