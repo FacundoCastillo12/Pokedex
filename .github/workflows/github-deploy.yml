@@ -17,9 +17,6 @@ jobs:
       - name: Install
         run: npm ci
         
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: npm run build
-        
       - name: Prettier code 
         run: npm run prettier
         
@@ -28,7 +25,10 @@ jobs:
 
       - name: Run tests
         run: npm test
-
+        
+      - name: Build 🔧 
+        run: npm run build
+        
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
