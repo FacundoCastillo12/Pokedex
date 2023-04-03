@@ -10,11 +10,11 @@
     "allowJs": true,
     "target": "ES6",
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "./build",
     "baseUrl": "./",
     "incremental": true,
     "strict": true
   },
-  "exclude": ["./dist", "node_modules"],
+  "exclude": ["./dist", "node_modules", "./build"],
   "include": ["./src"]
 }
